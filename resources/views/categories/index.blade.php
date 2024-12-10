@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Todo App - Kategoriler')
 @section('content')
 <!--Alert: Uyarı, bilgilendirme mesajı-->
     @if(Session::has('success'))

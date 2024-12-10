@@ -41,11 +41,7 @@ class TaskController extends Controller
         return redirect()->route('tasks.index');
     }
 
-    public function show(Task $task)
-    {
-        return view('tasks.show', compact('task'));
-    }
-
+   
     public function edit(Task $task)
     {
         $categories = Category::all();

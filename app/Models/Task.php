@@ -11,6 +11,7 @@ class Task extends Model
     //TODO:   use HasFactory bak.
     protected $fillable = ['title', 'category_id', 'is_completed'];
 
+    //belongsTo->AİT
     public function category()
     {
         return $this->belongsTo(Category::class);

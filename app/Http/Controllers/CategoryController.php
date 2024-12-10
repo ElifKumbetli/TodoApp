@@ -15,9 +15,10 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('categories.index', compact('categories'));
     }
-
+    //request:istek 
+    //validate:doğrulamak
     public function store(StoreCategoryRequest $request)
-    {
+    {        
         //Request bunun yerine farklı bir kullanım yapılabilir. php artisan make:request
         Category::create($request->validated());
 
