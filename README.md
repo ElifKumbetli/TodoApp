@@ -31,4 +31,9 @@ Projeyi daha iyi anlayabilmeniz için aşağıdaki ekran görüntülerini incele
 
 ## 👨‍💻 **Kişisel Deneyim**
 
+<<<<<<< HEAD
 Bu proje, **PHP** ve **Laravel** konularında pratik yapmamı sağladı. Laravel’in MVC yapısının ve Eloquent ORM yapısının işleyişini daha iyi öğrenmemi, kullanıcı kimlik doğrulama (Authentication) sistemini kullanarak güvenli giriş ve kayıt işlemlerini entegre etmeme yardımcı oldu. Ayrıca, görevlerin yönetimi, durum takibi ve kullanıcı etkileşimi gibi özellikleri geliştirerek web uygulamalarında kullanıcı odaklı çözümler üretme konusunda deneyim kazandım. 🎓
+=======
+Bu proje, **PHP** ve **Laravel** konularında pratik yapmamı sağladı. Laravel’in MVC yapısının ve Eloquent ORM yapısının işleyişini daha iyi öğrenmemi, kullanıcı kimlik doğrulama (Authentication) sistemini kullanarak güvenli giriş ve kayıt işlemlerini entegre etmeme yardımcı oldu. Ayrıca, görevlerin yönetimi, durum takibi ve kullanıcı etkileşimi gibi özellikleri geliştirerek web uygulamalarında kullanıcı odaklı çözümler üretme konusunda deneyim kazandım. 🎓
+
+>>>>>>> b728a058282329a58445da8c5ede0477252440d0
