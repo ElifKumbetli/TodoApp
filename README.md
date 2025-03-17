@@ -29,6 +29,12 @@ Projeyi daha iyi anlayabilmeniz için aşağıdaki ekran görüntülerini incele
 ![Görev Ekleme](images/screenshot2.png)  
 *Yeni Görev Ekleme Ekranı*
 
+![Görev Silindi](images/screenshot3.png)  
+*Görev Başarıyla Silindi Ekranı*
+
+![Görev Güncellendi](images/screenshot4.png)  
+*Görev Başarıyla Güncellendi Ekranı*
+
 ## 👨‍💻 **Kişisel Deneyim**
 
 Bu proje, **PHP** ve **Laravel** konularında pratik yapmamı sağladı. Laravel’in MVC yapısının ve Eloquent ORM yapısının işleyişini daha iyi öğrenmemi, kullanıcı kimlik doğrulama (Authentication) sistemini kullanarak güvenli giriş ve kayıt işlemlerini entegre etmeme yardımcı oldu. Ayrıca, görevlerin yönetimi, durum takibi ve kullanıcı etkileşimi gibi özellikleri geliştirerek web uygulamalarında kullanıcı odaklı çözümler üretme konusunda deneyim kazandım. 🎓
