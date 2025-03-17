@@ -18,6 +18,7 @@ Laravel framework’ü ile geliştirdiğim **Yapılacaklar Listesi (ToDoApp)** u
 - **Laravel Blade**: Kullanıcı dostu arayüz tasarımı
 - **Laravel MVC**: Model-View-Controller mimarisi
 - **Laravel Auth**: Kullanıcı girişi ve kayıt işlemleri için Laravel'in Authentication sistemi
+- **Bootstrap**: Responsive ve şık bir kullanıcı arayüzü için  
 
 ## 🎨 **Görseller**
 
