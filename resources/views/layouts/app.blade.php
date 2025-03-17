@@ -25,6 +25,28 @@
                     <a class="nav-link" href="{{ url('/help') }}">Yardım</a>
                 </li>
 
+        @auth
+            <li class="nav-item">
+                <span class="nav-link">Hoşgeldin, {{ Auth::user()->name }}</span>
+            </li>
+        @endauth
+            
+        @auth
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Çıkış Yap</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
+        @endauth
+
+
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Giriş Yap</a>
+                </li>
+            @endguest
             </ul>
         </div>
     </nav>

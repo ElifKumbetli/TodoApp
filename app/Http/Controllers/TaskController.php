@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\StoreTaskRequest;
+
 
 class TaskController extends Controller
 {
     public function index()
     {
+        //session:oturum
         //TODO: with kullanımına bak, ('category') nedir bak!
-
-        $tasks = Task::with('category')->get();
+        $tasks = Auth::user()->tasks;   
         return view('tasks.index', compact('tasks'));
     }
 
@@ -22,23 +25,23 @@ class TaskController extends Controller
         return view('tasks.create', compact('categories'));
     }
 
-    public function store(Request $request)
-    {
-        //TODO: Uzunluk gibi şeyler eklenebeilir.
-        $request->validate([
-            'title' => 'required|string|min:5|max:50',
-            'category_id' => 'required|exists:categories,id',
-            'is_completed' => 'required|boolean',
-        ]);
-        
+    //TODO: Diğer şekilde kullanımına bak, iyileştir.
+    //StoreTaskRequest sınıfı oluşturdum, doğrulamaları ve kuralları orada yazdım, daha temiz bir kod yapısı oldu.
 
+    public function store(StoreTaskRequest  $request)
+    {
+        //TODO: Validation mesajları arayüzde gösterilmiyor, buraya bak.
+        //Hem başarılı hem de başarısız mesajları gösteriliyor.
+         
         Task::create([
-            'title' => $request->title,
-            'category_id' => $request->category_id,
-            'is_completed' => $request->is_completed,
+        'title' => $request->title,
+        'category_id' => $request->category_id,
+        'is_completed' => $request->is_completed,
+        'user_id' => Auth::id(), 
         ]);
+
         // TODO: Atama şekline bak(https://laravel.com/docs/4.2/eloquent#insert-update-delete).
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success', 'Görev başarıyla eklendi.');
     }
 
    
@@ -46,29 +49,19 @@ class TaskController extends Controller
     {
         $categories = Category::all();
         return view('tasks.edit', compact('task', 'categories'));
-
     }
 
-    public function update(Request $request, Task $task)
+    public function update(StoreTaskRequest  $request, Task $task)
     {
-        $request->validate([
-            'title' => 'required',
-            'category_id' => 'required|exists:categories,id',
-            'is_completed' => 'required|boolean',
-        ]);
+        $data = $request->validated();
+        $task->update($data);
 
-        $task->update([
-            'title' => $request->title,
-            'category_id' => $request->category_id,
-            'is_completed' => $request->is_completed,
-        ]);
-
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success', 'Görev başarıyla güncellendi.');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('silindi', 'Görev başarıyla silindi.');
     }
 }

@@ -6,6 +6,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
 
+use Illuminate\Support\Facades\DB;
+
+
 class CategorySeeder extends Seeder
 {
     /**
@@ -15,7 +18,16 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::create(['name' => 'DenemeKategori1']);
+        //TODO: Bir seeder daha eklenecek.
+        //TODO: Her kategori ile ilişkili Task ekle, 2 kategori daha eklenecek.
+        
+        //Category::create(['name' => 'DenemeKategori1']);
+
+        DB::table('categories')->insert([
+            ['name' => 'Yazılım'],
+            ['name' => 'Kişisel'],
+            ['name' => 'Diğer'],
+        ]);
         
     }
 }

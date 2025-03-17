@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (Session::has('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{ Session::get('success') }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
+@if (Session::has('silindi'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ Session::get('silindi') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+
     <h1>Görevler</h1>
 
     <table class="table table-striped table-bordered table-sm">
@@ -16,7 +32,7 @@
         <tbody>
             @foreach($tasks as $task)
                 <tr>
-                    <th scope="row">{{ $task->id }}</th>
+                    <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $task->title }}</td>
                     <td>{{ $task->category->name }}</td>
                     <td>

@@ -9,11 +9,16 @@ class Task extends Model
 {
     use HasFactory;
     //TODO:   use HasFactory bak.
-    protected $fillable = ['title', 'category_id', 'is_completed'];
+    protected $fillable = ['title', 'category_id', 'is_completed', 'user_id'];
 
     //belongsTo->AİT
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class); 
     }
 }
