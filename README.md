@@ -23,10 +23,10 @@ Laravel framework’ü ile geliştirdiğim **Yapılacaklar Listesi (ToDoApp)** u
 
 Projeyi daha iyi anlayabilmeniz için aşağıdaki ekran görüntülerini inceleyebilirsiniz:
 
-![Görev Listesi](screenshot1.png)  
+![Görev Listesi](images/screenshot1.png)  
 *Görev Listesi Ekranı*
 
-![Görev Ekleme](screenshot2.png)  
+![Görev Ekleme](images/screenshot2.png)  
 *Yeni Görev Ekleme Ekranı*
 
 ## 👨‍💻 **Kişisel Deneyim**
